@@ -1,0 +1,54 @@
+ <ul>
+    <li ng-repeat="item in awesomeThings" ng-click="itemclick()">
+        {{ item }}
+    </li>
+</ul>
+
+<ul>
+    <li dir-paginate="item in awesomeThings | itemsPerPage: 2" pagination-id="cust">{{ item }}</li>
+</ul>
+
+<dir-pagination-controls pagination-id="cust"></dir-pagination-controls>
+
+<div class="main-content">
+
+	<form class="form-inline">
+  		<div class="form-group">
+			<label for="search">Search:</label>
+		    <input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+		</div>
+		<div class="form-group">
+			<label for="search-size">Items per page:</label>
+		    <input id="search-size" type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+		</div>
+	    <div class="table-responsive">
+		    <table class="result-table table table-striped table-hover table-condensed">
+		      <thead>
+		        <tr><th colspan="6">Formula 1 2013 Results</th></tr>
+		      </thead>
+		      <tbody>
+		        <tr>
+		          <td>Checked</td><td>Round</td> <td>Grand Prix</td> <td>Team</td> <td>Grid</td> <td>Race</td>
+		        </tr>
+		        <tr ng-class="{'success': race.checked}" 
+		        	dir-paginate="race in races | filter:q | itemsPerPage: pageSize | orderBy:race.Results[0].grid" 
+		        	pagination-id="table" 
+		        	ng-click="race.checked = !race.checked" 
+		        	ng-model="race.checked">
+		          <td><input name="chk{{$index}}" type="checkbox" ng-model="race.checked"></td>
+		          <td>{{race.round}}</td>
+		          <td>{{race.raceName}}</td>
+		          <td>{{race.Results[0].Constructor.name}}</td>
+		          <td>{{race.Results[0].grid}}</td>
+		          <td>{{race.Results[0].position}}</td>
+		        </tr>
+		      </tbody>
+		    </table>
+		</div>
+
+	    <dir-pagination-controls pagination-id="table"></dir-pagination-controls>
+	</form>
+
+</div>
+
+<a ng-click="goAuth()">TrackTv</a>

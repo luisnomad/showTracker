@@ -12,9 +12,9 @@ angular.module('clientApp')
     
   	var tracktvApi = {};
 
-	tracktvApi.clientID = "2bb74bdcd4436c4fa76e1755cb0b19e3f0068f112a785ef59e1e668d39841683";
-	tracktvApi.clientSecret = "aa64f1a3b478c372192ba6f8ad13b0bfcf8623b60a9ce3910a443209a8a3eae6";
-	tracktvApi.url = "https://trakt.tv/oauth/authorize?client_id=" + tracktvApi.clientID + "&redirect_uri=http%3A%2F%2Fwww.luisnomad.com%3A9000%2Ftracktv-success&response_type=code";
+	tracktvApi.clientID = "";
+	tracktvApi.clientSecret = "";
+	tracktvApi.url = "";
 
 	tracktvApi.getCode = function () {
 		// http://stackoverflow.com/questions/28265819/oauth-for-personal-use-trakt-tv
@@ -37,7 +37,7 @@ angular.module('clientApp')
 			data: { 
 				'code': code,
 				'client_id': tracktvApi.clientID,
-				'redirect_uri': "http://www.luisnomad.com:9000/tracktv-success",
+				'redirect_uri': "",
 				'client_secret': tracktvApi.clientSecret,
 				'grant_type' : 'authorization_code'
 			}

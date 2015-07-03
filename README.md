@@ -1,12 +1,12 @@
 # showTracker
 
-This is my first project with Angular
+This is my first "experiment" with Angular
 
-It's a work in progress, from an example taken from the Internet, to a full App that uses AngularJS, Express & NodeJS.
+It's a work in progress, right now not making much sense.
 
-I know nothing about these technologies, but I am learning while I create the project. Right now it's just a bunch of code lines that don't make much sense. I am shaping it a bit every day.
+I use this project basically to learn. Right now it's just a bunch of code lines that don't make much sense. I am shaping it a bit every day.
 
-# Installation
+# Installation (if you really want to)
 
 Clone this repo
 
